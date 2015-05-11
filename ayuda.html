@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard - Deep Blue Admin</title>
+
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/local.css" />
+
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+       
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Arnald-Bros</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav side-nav">
+                        <li ><a href="index.html"><i class="fa fa-home"></i> Inicio</a></li>
+                        <li class="active"><a href="ayuda.html"><i class="fa fa-info-circle"></i>Tutorial</a></li>
+                        <li><a href="jugar.html"><i class="fa fa-gamepad"></i> Jugar</a></li>
+                    </ul>
+                    
+                </div>
+            </nav>
+            <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
+            <div id="page-wrapper">
+              <!-- CABECERA DE TITULO -->
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-md-3 text-left">
+                         <p><img src="images/logo_lr.png" class="img-thumbnail"></p>
+                        </div>
+                        <div class="col-md-9 text-left">
+                            <h1>ARNALD-BROS TUTORIAL</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Teclas</h3>
+                  </div>
+                  <div class="panel-body">
+                   <p>La tecla de flecha arriba te permitira saltar, la flecha abajo el agacharse, no debes tocar los obstaculos, asi ganaras distancia</p>
+                    <div class="row ">
+                        <div class="col-md-6 text-center">
+                         <p><h3>Saltar:<button><i class="fa fa-arrow-up fa-6"></i></button></p>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <p><h3>Rodar:<button><i class="fa fa-arrow-down fa-6"></i></button></p>
+                        </div>
+                    </div> 
+                  </div>
+                </div>
+               
+                
+                
+                <div class="row">
+                     <canvas id="myCanvas" width="400" height="200">
+            <!-- Insert fallback content here -->
+            Sorry, your browser doesn't support canvas technology
+        </canvas>
+  
+        <script type="text/javascript">
+       
+        
+            var canvas;
+            var ctx;
+            var x = 284;
+            var y = 130;
+            var mx = 0;
+            var my = 0;
+            var WIDTH =0;
+            var HEIGHT=0;
+  
+                        function circle(x,y,r) {
+                          ctx.beginPath();
+                          ctx.arc(x, y, r, 0, Math.PI*2, true);
+                          ctx.fill();
+                        }
+                          
+                        function clear() {
+                          ctx.clearRect(0, 0, WIDTH, HEIGHT);
+                        }
+                          
+                        function init() {
+                          canvas = document.getElementById("myCanvas");
+                          ctx = canvas.getContext("2d");
+                          WIDTH = canvas.width;
+                          HEIGHT = canvas.height;
+                          window.onkeydown = keydownControl;
+                          return setInterval(draw, 1);
+                        }
+                          
+                        function draw() {
+                          clear();
+                          circle(x, y, 20);
+                          
+                          if (x + mx > WIDTH || x + mx < 0)
+                                mx = -mx;
+                          if (y + my > HEIGHT || y + my < 0)
+                                my = -my;
+                          
+                          x += mx;
+                          y += my;
+                          
+                        }
+                          
+                        function keydownControl(e) {
+                                if(e.keyCode==37) {
+                                        mx = -2;
+                                        my = 0;
+                                } else
+                                if (e.keyCode==38) {
+                                        mx = 0;
+                                        my = -2;
+                                } else if
+                                (e.keyCode==39) {
+                                        mx = 2;
+                                        my = 0;
+                                } else
+                                if (e.keyCode==40) {
+                                        mx = 0;
+                                        my = 2;
+                                }
+                        }
+                          
+                        init();
+  
+        </script>
+        </body>
+                </div>
+            </div>   
+        </div>
+        <!-- /#wrapper -->
+
+    </body>
+</html>
