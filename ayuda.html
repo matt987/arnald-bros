@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dashboard - Deep Blue Admin</title>
+        <title>ARNALD-BRO</title>
 
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
@@ -12,9 +12,9 @@
 
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-        <!-- 
+       
         <script type="text/javascript" src="js/Ayuda.js"></script> 
-        -->
+     
 
        
     </head>
@@ -55,94 +55,28 @@
                 </div>
                 <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Teclas</h3>
+                    <h3 class="panel-title">Meta del juego</h3>
                   </div>
                   <div class="panel-body">
-                   <p>La tecla de flecha arriba te permitira saltar, la flecha abajo el agacharse, no debes tocar los obstaculos, asi ganaras distancia</p>
-                    <div class="row ">
-                        <div class="col-md-6 text-center">
-                         <p><h3>Saltar:<button><i class="fa fa-arrow-up fa-6"></i></button></p>
-                        </div>
-                        <div class="col-md-6 text-center">
-                            <p><h3>Rodar:<button><i class="fa fa-arrow-down fa-6"></i></button></p>
-                        </div>
-                    </div> 
+                   <p>Saltar encima del obstaculo para acumular la mayor cantidad de puntaje</p>
+                    
+                  </div>
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Teclas/Animacion del juego</h3>
+                  </div>
+                  <div class="panel-body">
+                   <p>Para ejemplo: hacer click derecho sobre la imagen para saltar</p>
+                    
                   </div>
                 </div>
                
                 
                 
-            <canvas id="myCanvas" width="568" height="262">
-            <!-- Insert fallback content here -->
-            Sorry, your browser doesn't support canvas technology
-        </canvas>
+            <div id="exampleFullDiv">
+                <canvas width="450" height="230" id="canvas"></canvas>
+            </div>
   
-        <script type="text/javascript">
-            var canvas;
-            var ctx;
-            var x = 284;
-            var y = 130;
-            var mx = 0;
-            var my = 0;
-            var WIDTH = 568;
-            var HEIGHT = 262;
-  
-                        function circle(x,y,r) {
-                          ctx.beginPath();
-                          ctx.arc(x, y, r, 0, Math.PI*2, true);
-                          ctx.fill();
-                          /*console.log("entro en circle, x:" + x + " y: "+y);*/
-                        }
-                          
-                        function clear() {
-                          ctx.clearRect(0, 0, WIDTH, HEIGHT);
-                        }
-                          
-                        function init() {
-                          canvas = document.getElementById("myCanvas");
-                          ctx = canvas.getContext("2d");
-                          window.onkeydown = keydownControl;
-                         
-                          return setInterval(draw, 90);
-                        }
-                          
-                        function draw() {
-                            console.log("entro en draw");
-                          clear();
-                        
-                          circle(x, y, 20);
-                          
-                          if (y + my > HEIGHT){
-                                 my = -my;
-                               
-                                 console.log("abajo my" + my);
-                                 clear();
-                          }else if ( y + my < 0){
-                                my = -my;
-                                 console.log("aarriba my" + my);
-                                
-                                clear();
-                          }
-                          
-                          y += my;
-
-                          
-                        }
-                          
-                        function keydownControl(e) {
-                              
-                                if (e.keyCode==38) {
-                                        mx = 0;
-                                        my = -2;
-                                       
-                                        console.log("mx = 0 y my =-2")
-                                        
-                                } 
-                        }
-                          
-                         init();
-  
-        </script>
+      
 
         </body>
                 </div>
