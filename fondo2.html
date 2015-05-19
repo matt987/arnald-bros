@@ -1,0 +1,115 @@
+k<title>Learning the basics of canvas</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var canvas = $("#myCanvas");
+	var context = canvas.get(0).getContext("2d");
+	var canvasWidth = canvas.width();
+	var canvasHeight = canvas.height();
+
+	var gradient = context.createLinearGradient(0, 0, 0, canvas.height());
+	gradient.addColorStop(0, "rgb(10, 10, 60)");
+	gradient.addColorStop(1, "rgb(10, 30, 70)");
+	context.fillStyle = gradient;
+	context.fillRect(0, 0, canvas.width(), canvas.height());
+	 
+
+
+
+	function Fondo(x,y,w,h){
+		this.x=x;
+		this.y=y;
+		this.w=w;
+		this.h=h;
+		this.dibujar=function(ctx){
+			//rectangulo madre
+		//context.strokeStyle = "rgb(90, 128, 128)";
+		//context.save();
+
+		context.fillStyle = "rgb(250, 250, 150)";
+		context.save();
+		//context.lineWidth = 2;
+		//context.strokeRect(100, 130, 150, 100);
+
+		//luna
+		context.beginPath();
+		context.arc(this.x + 14.5/18 * this.w, this.y + 6/18 * this.h, 4/12 * this.w, 0,Math.PI*2, true);
+		context.closePath(); // Close the path
+		context.fill(); //
+
+		context.fillStyle = "rgb(100, 90, 100)";
+		context.save();
+
+		context.lineWidth = 3;
+		context.beginPath();
+		context.moveTo(0, 300);
+		context.quadraticCurveTo(200, 100, 300, 300);
+		context.moveTo(250, 300);
+		context.quadraticCurveTo(400, 100, 500, 300);
+		context.fill();
+
+
+		context.moveTo(0, 210); // Set the path origin
+		context.lineTo(500, 210);
+		context.closePath(); // Close the path
+		context.fill(); //
+
+		
+			
+		}
+	}
+
+
+
+	var luna= new Fondo(150, 50, 100, 100);
+	luna.dibujar(context);
+	var estrella= new Fondo(10, 5, 7, 5);
+	estrella.dibujar(context);
+	var estrella1= new Fondo(220, 9, 7, 5);
+	estrella1.dibujar(context);
+	var estrella2= new Fondo(100, 80, 7, 5);
+	estrella2.dibujar(context);
+	var estrella3= new Fondo(250, 34, 7, 5);
+	estrella3.dibujar(context);
+	var estrella4= new Fondo(300, 50, 7, 5);
+	estrella4.dibujar(context);
+	var estrella5= new Fondo(400, 40, 7, 5);
+	estrella5.dibujar(context);
+
+	var estrella6= new Fondo(10, 5, 7, 5);
+	estrella6.dibujar(context);
+	var estrella7= new Fondo(150, 40, 7, 5);
+	estrella7.dibujar(context);
+	var estrella8= new Fondo(80, 40, 7, 5);
+	estrella8.dibujar(context);
+
+
+	var estrella9= new Fondo(300, 5, 7, 5);
+	estrella9.dibujar(context);
+	var estrella10= new Fondo(350, 40, 7, 5);
+	estrella10.dibujar(context);
+	var estrella0= new Fondo(420, 40, 7, 50);
+	estrella0.dibujar(context);
+
+
+	//animate();
+	
+
+		
+		
+
+		
+
+		
+
+});
+
+</script>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500" style="width:500px;height:500px; border:1px solid red;">
+<!-- Insert fallback content here -->
+</canvas>
+</body>
+</html>
