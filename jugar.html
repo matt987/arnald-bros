@@ -7,14 +7,16 @@
     <title>Dashboard - Deep Blue Admin</title>
 
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <img id="myperro" src="images/perro.png" style="display:none;" />
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="css/local.css" />
 
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/funcion.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+<body  onLoad="img_canvas()">
 
     <div id="wrapper">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -38,6 +40,47 @@
         </nav>
         <!--CONTENIDO DE LA PAGINA PRINCIPAL-->
         <div id="page-wrapper">
+    <canvas id="micanvas" width="1124px" height="550px" style="border:2px solid blue;width:1000px;height:550px">
+        Este texto sera visto cuando canvas no este soportado por el navegador
+    </canvas>
+
+<script type="text/javascript">
+
+        var canvas = document.getElementById("micanvas");
+        var ctx = canvas.getContext("2d");
+
+
+        //dibujar los graficos
+        var dibujo1 = new Dibujo(new Punto(0, 0), 900, 550);
+        dibujo1.dibujar(ctx);
+
+        var dibujo2 = new DibujoArbol(new Punto(50, 50), 400, 400);
+        dibujo2.dibujar(ctx);
+
+        var dibujo3 = new DibujoArbol(new Punto(350, 350), 100, 100);
+        dibujo3.dibujar(ctx);
+
+        var dibujo4 = new DibujoArbol(new Punto(450, 330), 100, 100);
+        dibujo4.dibujar(ctx);
+
+        var dibujo4 = new DibujoArbol(new Punto(520, 350), 100, 100);
+        dibujo4.dibujar(ctx);
+
+        var dibujo5 = new DibujoFlor(new Punto(70, 10), 300, 300);
+        dibujo5.dibujar(ctx);
+
+        var dibujo6 = new DibujoFlor(new Punto(70, -30), 300, 300);
+        dibujo6.dibujar(ctx);
+
+        var dibujo6 = new DibujoFlor(new Punto(80, -150), 400, 400);
+        dibujo6.dibujar(ctx);
+
+        var dibujo6 = new DibujoFlor(new Punto(110, -120), 400, 400);
+        dibujo6.dibujar(ctx);
+
+                
+                
+    </script>
         </div>
            
     </div>
