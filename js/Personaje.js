@@ -1,3 +1,4 @@
+<script type="text/javascript">
 function Personaje(){
   Figura.call(this, 'Personaje');
   this.dibujar = function() {};
@@ -8,3 +9,4 @@ function Personaje(){
 
 Personaje.prototype = Object.create(Figura.prototype);    
 Personaje.prototype.constructor = Personaje;
+</script>

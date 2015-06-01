@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>tiempo de Juego</title>
+        <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+        <script type="text/javascript" src="js/jquery.countdown-es.js"></script>
+        <script src="js/countdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="Nivel.js"></script>
+<script type="text/javascript">
+
+ 
+  
+  window.onload = function() { 
+        document.onkeypress = puntuacion; 
+    }
+    var puntajeSalto=0;
+    var puntajeArrastre=0;
+    var total=0;
+    var totalSalto=0;
+    var totalArrastre=0;
+    		function puntuacion(letra){
+          var elCaracter = String.fromCharCode(letra.keyCode);
+             if(letra.keyCode==38 || letra.keyCode==40){
+                if (letra.keyCode==38) {
+                        puntajeSalto+=5;
+                        totalSalto=puntajeSalto;
+                }
+               if(letra.keyCode==40){
+                      puntajeArrastre+=7;
+                      totalArrastre=puntajeArrastre;
+                }
+                	
+                	total=totalArrastre+totalSalto; 
+              }
+        }
+
+   var  counter = setInterval ( 'timer()' , 1000);
+   var segundo=10;
+       function timer(){
+            segundo-=1;
+           
+            if (segundo <0) {
+              clearInterval(counter); 
+              alert("Ha Terminado tu tiempo y tu puntaje es:"+total);
+              return
+            }
+        }
+
+</script>
+</head>
+<body>
+   
+         
+                
+            
+  <script type="text/javascript">
+           var conteo = new Countdown({
+                  time: 10, 
+                  width:150, 
+                  height:80, 
+                  rangeHi:"minute" 
+                
+                  });
+  </script>
+              <span id="timer"></span>
+              
+
+
+
+</body>
+</html>
