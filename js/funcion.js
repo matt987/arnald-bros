@@ -60,7 +60,38 @@ function CirculoRelleno(centro, radio){
 	}
 }
 
+	//luna
+function Estrella(x,y,w,h){
+	this.x=x;
+	this.y=y;
+	this.w=w;
+	this.h=h;
+	this.dibujar = function(ctx){
+		ctx.fillStyle = "rgb(250, 250, 150)";
+		ctx.beginPath();
+		ctx.arc(this.x + 14.5/18 * this.w, this.y + 6/18 * this.h, 4/12 * this.w, 0,Math.PI*2, true);
+		ctx.closePath(); // Close the path
+		ctx.fill(); //
 
+		//ctx.fillStyle = "rgb(100, 90, 100)";
+		//ctx.save();
+}}
+function Montanha(x,y,w,h){
+	this.x=x;
+	this.y=y;
+	this.w=w;
+	this.h=h;
+	this.dibujar = function(ctx){
+		ctx.fillStyle = "rgb(100, 90, 100)";
+		ctx.lineWidth = 3;
+		ctx.beginPath();
+		ctx.moveTo(0, 300);
+		ctx.quadraticCurveTo(200, 100, 300, 300);
+		ctx.moveTo(250, 300);
+		ctx.quadraticCurveTo(400, 100, 500, 300);
+		ctx.fill();
+
+}}
 function Dibujo(pos, ancho, alto){
 	this.p = pos;
 	this.a = ancho;

@@ -1,0 +1,50 @@
+<title>Learning the basics of canvas</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="funcion.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var canvas = $("#myCanvas");
+	var context = canvas.get(0).getContext("2d");
+	var canvasWidth = canvas.width();
+	var canvasHeight = canvas.height();
+
+	var gradient = context.createLinearGradient(0, 0, 0, canvas.height());
+	gradient.addColorStop(0, "rgb(10, 10, 60)");
+	gradient.addColorStop(1, "rgb(10, 30, 70)");
+	context.fillStyle = gradient;
+	context.fillRect(0, 0, canvas.width(), canvas.height());
+	 
+
+
+
+	var estrella45=new Estrella(100,60,200,100);
+	estrella45.dibujar(context);
+
+	var mont=new Montanha(100,100,100,300);
+	mont.dibujar(context);
+
+
+	
+
+
+	//animate();
+	
+
+		
+		
+
+		
+
+		
+
+});
+
+</script>
+</head>
+<body>
+<canvas id="myCanvas" width="1124" height="550" style="width:1124px;height:550px; border:1px solid red;">
+<!-- Insert fallback content here -->
+</canvas>
+</body>
+</html>
