@@ -19,7 +19,7 @@ function img_canvas() {
  img.src = "images/perro.png";
  //pasamos la imagen al 2d del canvas y se dibujará
  //en 0 0 podemos poner las cordenadas de donde empezar a dibujar la imagen
-ctx.drawImage(img, 10, 450);
+ctx.drawImage(img, 10, 300);
 };
 
 function Punto(x, y){
@@ -100,7 +100,7 @@ function Dibujo(pos, ancho, alto){
 	this.dibujar = function(ctx){
 
 			var image = document.getElementById("myperro");
-		ctx.drawImage(image, 10, 10, 128, 128);
+		//ctx.drawImage(image, 10, 10, 128, 128);
 		//dibujo del fondo
 				ctx.fillStyle = "rgb(0, 255, 255)";
 		ctx.fillRect(this.p.x + 0/28*this.a, 
@@ -127,78 +127,14 @@ function Dibujo(pos, ancho, alto){
 		ctx.shadowOffsetX = 0;
 		ctx.shadowOffsetY = 0;
 
-		//dibujar nubes 1
-		ctx.fillStyle = "rgb(0, 200, 255)";
-		var redondo2 = new CirculoRelleno(
-						new Punto(this.p.x+8/28*this.a,
-								  this.p.y+8/40*this.h),
-						2/28*this.a);
-		redondo2.dibujar(ctx);
-
-		ctx.globalAlpha = 1.0;
-		var redondo3 = new CirculoRelleno(
-						new Punto(this.p.x+11/28*this.a,
-								  this.p.y+8/40*this.h),
-						3/28*this.a);
-		redondo3.dibujar(ctx);
-
-		ctx.globalAlpha = 1.0;
-		var redondo4 = new CirculoRelleno(
-						new Punto(this.p.x+14/28*this.a,
-								  this.p.y+8/40*this.h),
-						2/28*this.a);
-		redondo4.dibujar(ctx);
-
-		ctx.globalAlpha = 1.0;
-		var redondo2 = new CirculoRelleno(
-						new Punto(this.p.x+16/28*this.a,
-								  this.p.y+8/40*this.h),
-						1/28*this.a);
-		redondo2.dibujar(ctx);
-
-		//dibujar nube 2
-
-
-		var redondo2 = new CirculoRelleno(
-						new Punto(this.p.x+20/28*this.a,
-								  this.p.y+6/40*this.h),
-						2/28*this.a);
-		redondo2.dibujar(ctx);
-
-		ctx.globalAlpha = 1.0;
-		var redondo2 = new CirculoRelleno(
-						new Punto(this.p.x+23/28*this.a,
-								  this.p.y+6/40*this.h),
-						3/28*this.a);
-		redondo2.dibujar(ctx);
-
-		ctx.globalAlpha = 1.0;
-		var redondo2 = new CirculoRelleno(
-						new Punto(this.p.x+26/28*this.a,
-								  this.p.y+6/40*this.h),
-						2/28*this.a);
-		redondo2.dibujar(ctx);
-
-		ctx.globalAlpha = 1.0;
-		var redondo2 = new CirculoRelleno(
-						new Punto(this.p.x+22/28*this.a,
-								  this.p.y+8/40*this.h),
-						2/28*this.a);
-		redondo2.dibujar(ctx);
-
-		ctx.globalAlpha = 1.0;
-		var redondo2 = new CirculoRelleno(
-						new Punto(this.p.x+24/28*this.a,
-								  this.p.y+8/40*this.h),
-						2/28*this.a);
-		redondo2.dibujar(ctx);
+		
 
 		//montañas
 		ctx.fillStyle = "rgb(0, 232, 58)";
 		ctx.globalAlpha = 1.0;
 		var redondo2 = new CirculoRelleno(
 						new Punto(this.p.x+6/28*this.a,
-								  this.p.y+45/40*this.h),
+								  this.p.y+57/40*this.h),
 						15/28*this.a);
 		redondo2.dibujar(ctx);
 
@@ -206,7 +142,7 @@ function Dibujo(pos, ancho, alto){
 		ctx.globalAlpha = 1.0;
 		var redondo2 = new CirculoRelleno(
 						new Punto(this.p.x+23/28*this.a,
-								  this.p.y+52/40*this.h),
+								  this.p.y+62/40*this.h),
 						15/28*this.a);
 		redondo2.dibujar(ctx);
 
@@ -490,3 +426,94 @@ function DibujoFlor(pos, ancho, alto){
 		
 	}
 }
+
+
+function DibujoNuve1(pos, ancho, alto){
+	this.p = pos;
+	this.a = ancho;
+	this.h = alto;
+
+	this.dibujar = function(ctx){
+		ctx.fillStyle = "rgb(0, 200, 255)";
+
+//dibujar nubes 1
+		ctx.fillStyle = "rgb(0, 200, 255)";
+		var redondo2 = new CirculoRelleno(
+						new Punto(this.p.x+8/28*this.a,
+								  this.p.y+8/40*this.h),
+						2/28*this.a);
+		redondo2.dibujar(ctx);
+
+		ctx.globalAlpha = 1.0;
+		var redondo3 = new CirculoRelleno(
+						new Punto(this.p.x+11/28*this.a,
+								  this.p.y+8/40*this.h),
+						3/28*this.a);
+		redondo3.dibujar(ctx);
+
+		ctx.globalAlpha = 1.0;
+		var redondo4 = new CirculoRelleno(
+						new Punto(this.p.x+14/28*this.a,
+								  this.p.y+8/40*this.h),
+						2/28*this.a);
+		redondo4.dibujar(ctx);
+
+		ctx.globalAlpha = 1.0;
+		var redondo2 = new CirculoRelleno(
+						new Punto(this.p.x+16/28*this.a,
+								  this.p.y+8/40*this.h),
+						1/28*this.a);
+		redondo2.dibujar(ctx);
+
+		 }
+
+		}
+
+
+function DibujoNuve2(pos, ancho, alto){
+	this.p = pos;
+	this.a = ancho;
+	this.h = alto;
+
+	this.dibujar = function(ctx){
+			
+
+		var redondo2 = new CirculoRelleno(
+						new Punto(this.p.x+20/28*this.a,
+								  this.p.y+6/40*this.h),
+						2/28*this.a);
+		redondo2.dibujar(ctx);
+
+		ctx.globalAlpha = 1.0;
+		var redondo2 = new CirculoRelleno(
+						new Punto(this.p.x+23/28*this.a,
+								  this.p.y+6/40*this.h),
+						3/28*this.a);
+		redondo2.dibujar(ctx);
+
+		ctx.globalAlpha = 1.0;
+		var redondo2 = new CirculoRelleno(
+						new Punto(this.p.x+26/28*this.a,
+								  this.p.y+6/40*this.h),
+						2/28*this.a);
+		redondo2.dibujar(ctx);
+
+		ctx.globalAlpha = 1.0;
+		var redondo2 = new CirculoRelleno(
+						new Punto(this.p.x+22/28*this.a,
+								  this.p.y+8/40*this.h),
+						2/28*this.a);
+		redondo2.dibujar(ctx);
+
+		ctx.globalAlpha = 1.0;
+		var redondo2 = new CirculoRelleno(
+						new Punto(this.p.x+24/28*this.a,
+								  this.p.y+8/40*this.h),
+						2/28*this.a);
+		redondo2.dibujar(ctx);
+
+}
+}
+
+
+
