@@ -3,8 +3,10 @@ $(document).ready(function() {
 	var canvas = $("#micanvas");
 	var context = canvas.get(0).getContext("2d");
 
-	var canvasWidth = canvas.width(); 
-	var canvasHeight = canvas.height();
+	var canvasWidth = canvas.width()+4; 
+	var canvasHeight = canvas.height()+4;
+	console.log(canvasWidth);
+	console.log(canvasHeight);
 
 	var playAnimation = true;
 
@@ -27,6 +29,13 @@ $(document).ready(function() {
 
 	var x = y = 0;
 
+	function aleatorio(){
+   		numPosibilidades = 350 - 150 + 1;
+   		aleat = Math.random() * numPosibilidades;
+   		aleat = Math.floor(aleat);
+   		return parseInt(150) + aleat;
+	}
+
 	var Shape = function(x, y, width, height)
 	{
 		this.x = x;
@@ -37,9 +46,10 @@ $(document).ready(function() {
 
 	var shapes = new Array();
 
-	function draw(){
-		context.clearRect(0, 0, canvasWidth, canvasHeight);
-		shapes.push(new Shape(0, Math.random()*550, 30, 30));
+	function draw() {
+		// context.clearRect(0, 0, canvasWidth, canvasHeight);
+
+		shapes.push(new Shape(0, aleatorio(), 30, 30));
 		animate();
 	}
 	
@@ -50,17 +60,16 @@ $(document).ready(function() {
 		//controlar si llega al final del canvas
 		for (var i = 0; i < shapes.length; i++)
 		{
-			var tmpShape = shapes[i];
+			var tmpShape = shapes[0];
 			context.fillRect(tmpShape.x, tmpShape.y, tmpShape.width, tmpShape.height);
-
 			//velocidad
-			tmpShape.x += 10;
+			tmpShape.x -= 20;
 			//llega al final, limpiar y crear nuevo obstaculo
-			if (tmpShape.x + tmpShape.width > canvasWidth + 100)
+			if (tmpShape.x + tmpShape.width <= 0)
 			{
 				console.log('crear nuevo obstaculo');
-				tmpShape.x = 0;
-				tmpShape.y = Math.random()*200;
+				tmpShape.x = canvasWidth + 100;
+				tmpShape.y = aleatorio();
 			};
 		};
 		// animar obstaculo
@@ -68,7 +77,6 @@ $(document).ready(function() {
 			setTimeout(animate, 20);
 		};
 	};
-	
 	//dibujar primer obstaculo
 	draw();
 });
