@@ -22,6 +22,7 @@ function img_canvas() {
 ctx.drawImage(img, 10, 300);
 };
 
+
 function Punto(x, y){
 	this.x = x;
 	this.y = y;
