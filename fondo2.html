@@ -1,7 +1,7 @@
 <title>Learning the basics of canvas</title>
 <meta charset="utf-8">
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="funcion.js"></script>
+<script type="text/javascript" src="js/funcion.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	var canvas = $("#myCanvas");
@@ -18,20 +18,19 @@ $(document).ready(function() {
 
 
 
-	var estrella45=new Estrella(100,60,200,100);
+	var estrella45=new Estrella(350,60,200,100);
 	estrella45.dibujar(context);
 
-	var mont=new Montanha(100,100,100,300);
+	var mont=new Montanha(0,300,200, 100, 300, 300);
 	mont.dibujar(context);
-
-
-	
-
-
-	//animate();
-	
-
-		
+	var mont1=new Montanha(250, 300,400, 100, 500, 300);
+	mont1.dibujar(context);
+	var mont2=new Montanha(450,300,620,100,700,300);
+	mont2.dibujar(context);
+	var mont3=new Montanha(670,300,820,100,900,300);
+	mont3.dibujar(context);
+	var mont4=new Montanha(870,300,1050,100,1125,300);
+	mont4.dibujar(context);
 		
 
 		

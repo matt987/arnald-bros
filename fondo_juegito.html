@@ -11,12 +11,16 @@
 	</canvas>
 
 	<script type="text/javascript">
+	
 
 		var canvas = document.getElementById("micanvas");
 		var ctx = canvas.getContext("2d");
 
 
 		//dibujar los graficos
+		var dibujo1 = new Dibujo(new Punto(0, 0), 550, 550);
+		dibujo1.dibujar(ctx);
+
 		var dibujo1 = new Dibujo(new Punto(0, 0), 550, 550);
 		dibujo1.dibujar(ctx);
 

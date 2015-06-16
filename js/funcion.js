@@ -76,7 +76,9 @@ function Estrella(x,y,w,h){
 		//ctx.fillStyle = "rgb(100, 90, 100)";
 		//ctx.save();
 }}
-function Montanha(x,y,w,h){
+function Montanha(a,b,x,y,w,h){
+	this.a=a;
+	this.b=b;
 	this.x=x;
 	this.y=y;
 	this.w=w;
@@ -85,10 +87,11 @@ function Montanha(x,y,w,h){
 		ctx.fillStyle = "rgb(100, 90, 100)";
 		ctx.lineWidth = 3;
 		ctx.beginPath();
-		ctx.moveTo(0, 300);
-		ctx.quadraticCurveTo(200, 100, 300, 300);
-		ctx.moveTo(250, 300);
-		ctx.quadraticCurveTo(400, 100, 500, 300);
+		ctx.moveTo(a, b);
+		ctx.quadraticCurveTo(x, y, w, h);
+		//ctx.quadraticCurveTo(200, 100, 300, 300);
+		//ctx.moveTo(x+250, y);
+		//ctx.quadraticCurveTo(400, 100, 500, 300);
 		ctx.fill();
 
 }}
