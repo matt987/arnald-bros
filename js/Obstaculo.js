@@ -5,8 +5,8 @@ $(document).ready(function() {
 
 	var canvasWidth = canvas.width()+4; 
 	var canvasHeight = canvas.height()+4;
-	console.log(canvasWidth);
-	console.log(canvasHeight);
+	
+	
 
 	var playAnimation = true;
 
@@ -67,14 +67,14 @@ $(document).ready(function() {
 			//llega al final, limpiar y crear nuevo obstaculo
 			if (tmpShape.x + tmpShape.width <= 0)
 			{
-				console.log('crear nuevo obstaculo');
+				
 				tmpShape.x = canvasWidth + 100;
 				tmpShape.y = aleatorio();
 			};
 		};
 		// animar obstaculo
 		if (playAnimation) {
-			setTimeout(animate, 20);
+			setTimeout(animate, 39);
 		};
 	};
 	//dibujar primer obstaculo
